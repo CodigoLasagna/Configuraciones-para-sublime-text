@@ -1,0 +1,22 @@
+System32
++-glfw3.dll (Ademas de ir en system32 puedes ponerlo en la carpeta junto a tu archivo de c++)
+
+w64devkit
++-x86_64-w64-mingw32
+	|
+	+-include
+	|  +-GLFW
+	|       +-glfw3.h
+	|
+	+-lib
+	   +-libglfw3.a
+	   +-libglfw3dll.a
+
+[comandos]
+
+g++ -o main.exe main.cpp -lglfw3dll -lopengl32
+
+[Info]
+de normal esta misma estructura de colocar archivos es igual para casi cualquier libreria
+tengan en cuenta que la arquitectura o los bits de su libreria coincida con la de su computadora
+o en su respectivo caso con la de su kit de desarrollo
