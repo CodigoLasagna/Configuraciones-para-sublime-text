@@ -1,0 +1,19 @@
+{
+    "shell_cmd": "g++ $file_name -o $file_base_name && start cmd /c $file_base_name ^& pause",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "working_dir": "$file_path",
+    "selector": "source.c++",
+    "shell": "true",
+
+    "variants":
+    [
+        {
+            "name": "Ejecutar basico",
+            "shell_cmd": "g++ $file_name -o $file_base_name && start cmd /c $file_base_name ^& pause"
+        },
+        {
+            "name": "Ejecutar opengl y glfw",
+            "shell_cmd": "g++ $file_name -o $file_base_name -lglfw3dll -lopengl32 && $file_base_name"
+        }
+    ]
+}
